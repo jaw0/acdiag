@@ -1,0 +1,27 @@
+
+* logger
+
+* Example
+#+begin_src go
+import "github.com/jaw0/acdiag"
+
+var dl = diag.Logger("encabulator")
+
+dl.Debug("deplenation: %+v", dpl)
+dl.Verbose("thing happened")
+dl.Fatal("bad things happened: %v", err)
+
+// in/near main
+diag.SetConfig(diag.Config{
+        ProgName: "proggyd",
+        MailTo:   "devteam@company",
+        MailFrom: "daemon@company",
+        Facility: "local5",
+        Debug:    map[string]bool{
+                "encabulator": true,
+                "api":         true,
+        },
+})
+
+#+end_src
+
